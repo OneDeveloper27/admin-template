@@ -24,7 +24,7 @@ class AppServiceProvider extends ServiceProvider
         Passport::tokensExpireIn(now()->addMinutes(110));
         Passport::refreshTokensExpireIn(now()->addHours(2));
         Passport::personalAccessTokensExpireIn(now()->addDays(30));
-        
+
         Event::listen(function (\SocialiteProviders\Manager\SocialiteWasCalled $event) {
             $event->extendSocialite('github', \SocialiteProviders\GitHub\Provider::class);
         });
