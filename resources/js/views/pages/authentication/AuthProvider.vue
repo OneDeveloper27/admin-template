@@ -1,4 +1,5 @@
 <script setup>
+import axios from 'axios';
 import { useTheme } from 'vuetify';
 
 const { global } = useTheme()
@@ -23,6 +24,20 @@ const authProviders = [
     provider: 'google',
   },
 ]
+
+async function authenticateWithProvider(provider) {
+  try {
+    // Get the redirect URL from your backend
+    // await axios.get(`api/oauth/${provider}/callback`);
+    // Redirect the user to the provider's auth page
+    await axios.post(`api/oauth/${provider}/redirect`);
+    // debugger;
+    window.location.href;
+  } catch (error) {
+    console.error('Authentication error:', error)
+    // Optionally show a notification to the user
+  }
+}
 </script>
 
 <template>
@@ -33,5 +48,6 @@ const authProviders = [
     :icon="link.icon"
     variant="text"
     :color="global.name.value === 'dark' ? link.colorInDark : link.color"
+    @click="authenticateWithProvider(link.provider)"
   />
 </template>

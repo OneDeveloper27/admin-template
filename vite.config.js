@@ -73,4 +73,7 @@ export default defineConfig({
       './resources/js/**/*.vue',
     ],
   },
+  server: {
+    port: 3000,
+  },
 })
