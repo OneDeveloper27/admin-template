@@ -34,7 +34,8 @@ async function authenticateWithProvider(provider) {
     // debugger;
     window.location.href;
   } catch (error) {
-    console.error('Authentication error:', error)
+    alert('Error Code : ' + error.code + ',\nMessage : ' + error.message + ', \nName : ' + error.name + '\nAuthentication Failed ! Try Register Manually.');
+    console.error('Authentication error:', error);
     // Optionally show a notification to the user
   }
 }
