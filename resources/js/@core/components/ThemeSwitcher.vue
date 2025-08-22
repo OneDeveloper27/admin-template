@@ -42,7 +42,7 @@ watch(() => globalTheme.name.value, val => {
 
 // Set initial theme on mount
 onMounted(() => {
-  globalTheme.name.value = currentThemeName.value
+  globalTheme.name.value = initialThemeName
 })
 </script>
 

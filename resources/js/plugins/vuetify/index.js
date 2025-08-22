@@ -1,3 +1,4 @@
+import Cookies from 'js-cookie'
 import { createVuetify } from 'vuetify'
 import { VBtn } from 'vuetify/components/VBtn'
 import defaults from './defaults'
@@ -16,7 +17,7 @@ export default function (app) {
     defaults,
     icons,
     theme: {
-      defaultTheme: 'light',
+      defaultTheme: Cookies.get('sekolah_cikal_theme') || 'light',
       themes,
     },
   })

@@ -5,8 +5,6 @@ export const useApplicationStore = defineStore('application', {
     // Example state
     appName: import.meta.env.VITE_APP_NAME || 'My Application',
     appVersion: import.meta.env.VITE_APP_VERSION,
-    // Dark mode state
-    darkMode: false,
   }),
   actions: {
     toggleDarkMode() {
